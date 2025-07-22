@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulNest – Your Cozy Corner for Calm and Care</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="https://res.cloudinary.com/dx9m0jvtj/image/upload/v1753174462/ChatGPT_Image_Jul_22_2025_02_23_57_PM_pxdbix.png" type="image/png">
+  <meta name="theme-color" content="#C9A4E5" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="https://res.cloudinary.com/dx9m0jvtj/image/upload/v1753174462/ChatGPT_Image_Jul_22_2025_02_23_57_PM_pxdbix.png" class="logo" alt="SoulNest Logo" />
+    <h1>SoulNest</h1>
+    <div class="tagline">Your cozy corner for calm and care</div>
+    <p class="quote">“She remembered who she was and the game changed.”</p>
+    <nav>
+      <a href="#affirmations">Affirmations</a>
+      <a href="#meditation">Meditation</a>
+      <a href="#journal">Mood Journal</a>
+      <a href="#therapy">Therapy Booking</a>
+      <a href="#streaks">Self-Care Tracker</a>
+      <a href="#community">Community Forum</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="affirmations" class="card">
+      <h2>Daily Affirmations</h2>
+      <p>“I am worthy of love, peace, and growth.”</p>
+      <button onclick="newAffirmation()">Show Another</button>
+    </section>
+
+    <section id="meditation" class="card">
+      <h2>Guided Meditation</h2>
+      <p>“Inhale confidence, exhale doubt.”</p>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3" />
+        Your browser does not support audio playback.
+      </audio>
+    </section>
+
+    <section id="journal" class="card">
+      <h2>Mood Journal</h2>
+      <p>“I honor my emotions and learn from them.”</p>
+      <textarea id="journalEntry" placeholder="How are you feeling today?"></textarea>
+      <button onclick="saveJournal()">Save Entry</button>
+    </section>
+
+    <section id="therapy" class="card">
+      <h2>Book a Therapy Session</h2>
+      <p>“Seeking help is strength.”</p>
+      <form id="therapyForm" onsubmit="event.preventDefault(); alert('Therapy Session Requested!')">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="date" required />
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+
+    <section id="streaks" class="card">
+      <h2>Self-Care Tracker</h2>
+      <p>“Small acts of care lead to great healing.”</p>
+      <ul class="checklist">
+        <li><input type="checkbox" /> Drank Water 💧</li>
+        <li><input type="checkbox" /> Meditated 5 min 🧘‍♀️</li>
+        <li><input type="checkbox" /> Gave Yourself a Compliment 💖</li>
+      </ul>
+    </section>
+
+    <section id="community" class="card">
+      <h2>Community Forum</h2>
+      <p>“Together we rise.”</p>
+      <textarea placeholder="Share your thoughts, tips, or a kind word."></textarea>
+      <button>Post</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by Nitya Choudhary</p>
+  </footer>
+
+  <script>
+    const affirmations = [
+      "I am enough as I am.",
+      "Every day is a fresh start.",
+      "I radiate calm and peace.",
+      "Healing is not linear.",
+      "I trust the process of life."
+    ];
+    function newAffirmation() {
+      const i = Math.floor(Math.random() * affirmations.length);
+      document.querySelector("#affirmations p").textContent = affirmations[i];
+    }
+    function saveJournal() {
+      const entry = document.getElementById("journalEntry").value;
+      localStorage.setItem("moodJournal", entry);
+      alert("Journal saved!");
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log("Service Worker registered:", reg))
+          .catch(err => console.error("Service Worker error:", err));
+      });
+    }
+  </script>
+</body>
+</html>
