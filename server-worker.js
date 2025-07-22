@@ -1,19 +1,9 @@
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open('soulnest-cache-v1').then(cache => {
-      return cache.addAll([
-        'index.html',
-        'style.css',
-        'manifest.json'
-      ]);
-    })
-  );
+self.addEventListener('install', evt => {
+  evt.waitUntil(caches.open('soulnest-v2').then(cache => {
+    return cache.addAll(['/','/index.html','/style.css','/app.js','/manifest.json']);
+  }));
+  self.skipWaiting();
 });
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener('fetch', evt => {
+  evt.respondWith(caches.match(evt.request).then(res => res || fetch(evt.request)));
 });
