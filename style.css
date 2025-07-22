@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://res.cloudinary.com/dx9m0jvtj/image/upload/v1753170300/beautiful-floral-background-with-flowers-and-leaves-in-pastel-colors-free-vector_vypmit.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #5B2C3B;
+}
+
+header {
+  text-align: center;
+  padding: 2em 1em;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin: 0.2em 0;
+  font-size: 2.5em;
+  color: #5B2C3B;
+}
+
+.tagline {
+  font-style: italic;
+  color: #C9A4E5;
+  margin-bottom: 1em;
+}
+
+.quote {
+  font-weight: 600;
+  color: #5B2C3B;
+  margin-bottom: 1em;
+}
+
+nav a {
+  margin: 0 1em;
+  color: #5B2C3B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 2em;
+  margin: 1em;
+  max-width: 600px;
+  width: 90%;
+}
+
+textarea, input {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-family: inherit;
+}
+
+button {
+  background-color: #C9A4E5;
+  border: none;
+  padding: 0.8em 1.5em;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #B18CDE;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #FCEFF1;
+  font-weight: bold;
+}
