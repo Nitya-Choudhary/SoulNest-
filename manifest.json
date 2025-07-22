@@ -1,0 +1,16 @@
+{
+  "name": "SoulNest",
+  "short_name": "SoulNest",
+  "description": "Your cozy corner for calm and care.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FCEFF1",
+  "theme_color": "#C9A4E5",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dx9m0jvtj/image/upload/v1753174462/ChatGPT_Image_Jul_22_2025_02_23_57_PM_pxdbix.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
